@@ -28,7 +28,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.cors_origin_list,"https://lead-forge-gilt-gamma.vercel.app/"],
+    allow_origins=[settings.cors_origin_list,"https://lead-forge-gilt-gamma.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
