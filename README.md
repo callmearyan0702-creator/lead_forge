@@ -1,4 +1,5 @@
 # Industrial AI Lead Intelligence
+https://lead-forge-gilt-gamma.vercel.app
 
 A full-stack lead scoring application. Upload a CSV of
 leads, get each one scored 0–100 by an XGBoost model with a plain-
