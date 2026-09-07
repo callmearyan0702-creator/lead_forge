@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* Blueprint / technical-schematic palette. Deep navy "drafting table"
+     background, cool cyan for active/primary signal, warm amber reserved
+     for the hottest leads so it reads as a genuine alert, not decoration. */
+  --color-canvas: #0a1420;
+  --color-surface: #101d2e;
+  --color-surface-raised: #16283d;
+  --color-line: #24405c;
+  --color-line-soft: #1a2e44;
+  --color-ink: #e7eef5;
+  --color-ink-dim: #8ca3bd;
+  --color-ink-faint: #5b7089;
+  --color-accent: #4fd1e8;
+  --color-accent-dim: #2b7a8c;
+  --color-hot: #f2664a;
+  --color-warm: #f2a93c;
+  --color-cold: #5b7089;
+
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Faint drafting-paper grid used as a background texture on the canvas.
+   Kept subtle -- this is the page's signature texture, not a decoration
+   that competes with content. */
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, var(--color-line-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line-soft) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Technical-drawing corner brackets, used on panels as the recurring
+   structural motif instead of generic rounded cards. */
+.blueprint-panel {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+.blueprint-panel::before,
+.blueprint-panel::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--color-accent-dim);
+  opacity: 0.9;
+}
+.blueprint-panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-accent-dim);
+  border-left: 2px solid var(--color-accent-dim);
+}
+.blueprint-panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-accent-dim);
+  border-right: 2px solid var(--color-accent-dim);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 4px;
+}
